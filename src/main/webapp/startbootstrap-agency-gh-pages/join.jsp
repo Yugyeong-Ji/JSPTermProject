@@ -159,63 +159,39 @@ body {
 						<h5 class="card-title text-center">Join</h5>
 
 						<!-- Form 시작 -->
-						<form class="form-signin" id="join" action="join" method="post" name="joinform">
+						<form class="form-signin" id="join" method="post" action="joinAction.jsp" method="post" name="joinform">
 							<div class="form-label-group">
-								<input type="text" id="id" name="id" class="form-control" placeholder="id"
-									required autofocus value="${id}"> 
-								<input type="hidden" name= "reid" id="reid"> <label for="id">id</label>	
+								<input type="text" id="id" name="userID" class="form-control" placeholder="id"> 
+								<input type="hidden" name= "reid" id="reid"> <label for="userID">id</label>	
 							</div>
 
 							<!-- 아이디 체크 -->
+
+
 							<div class="form-label-group">
-								<button
-									class="btn btn-secondary form-control"
-									type="button" onclick="idcheck()">ID Check</button>
+								<input type="password" id="pwd" name="userPW" class="form-control"
+									placeholder="Password" required> <label for="userPW">password</label>
 							</div>
 
 							<div class="form-label-group">
-								<input type="password" id="pwd" name="pwd" class="form-control"
-									placeholder="Password" required> <label for="pwd">password</label>
-							</div>
-
-							<div class="form-label-group">
-								<input type="password" id="pwdcheck" name="pwdcheck" class="form-control"
-									placeholder="Confirm Password" required> <label
-									for="pwdcheck">Confirm password</label>
-							</div>
-
-							<hr>
-
-							<div class="form-label-group">
-								<input type="text" id="name" name="name" class="form-control" placeholder="name" required>
-								<label for="name">name</label>
+								<input type="text" id="name" name="userName" class="form-control" placeholder="name" required>
+								<label for="userName">name</label>
 							</div>
 							
-							<!-- 문제의 input 부분 -->
 							<div class="form-label-group">
-								<input type="email" id="email" name="email" class="form-control" placeholder="email">
-								<label for="email">email</label>
+								<input type="email" id="email" name="userEmail" class="form-control" placeholder="email" maxlength="50">
+								<label for="userEmail">email</label>
 							</div>
 
 							<hr>
-
-							<div class="form-label-group">
-								<button
-									class="btn btn-secondary form-control"
-									type="button" onclick="openZipSearch()">Search</button>
-							</div>
-
 							<br>
 
 							<div class="form-label-group">
-								<input type="text" id="phone" name="phone" class="form-control" placeholder="phone" required>
-								<label for="phone">phone</label>
+								<input type="text" id="phone" name="userPhone" class="form-control" placeholder="phone" required>
+								<label for="userPhone">phone</label>
 							</div>
 
-							<input type="button"
-								class="btn btn-primary form-control"
-								onclick="go_save()" value="Register"> 
-								
+							<input type="submit" class="btn btn-primary form-control" value="Register"> 
 								<a class="d-block text-center mt-2 small" href="./login.jsp">Sign In</a>
 							<hr class="my-4">
 						</form>

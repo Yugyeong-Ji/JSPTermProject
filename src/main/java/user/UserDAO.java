@@ -22,9 +22,7 @@ public class UserDAO {
 	{
 		try
 		{
-			String dbURL = "jdbc:mysql://localhost:3305/bbangdengi?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8"; 
-			//localhost:3306 => 내컴퓨터에 설치된 MySQL, port 3306의 BBS라는 DB에 접속
-			
+			String dbURL = "jdbc:mysql://localhost:3305/bbangdengi?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8"; 			
 			String dbID = "root";
 			String dbPassword = "1234";
 			Class.forName("com.mysql.jdbc.Driver"); 
@@ -32,7 +30,6 @@ public class UserDAO {
 			
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 			//DB 접속되면 conn객체에 접속정보가 저장
-			
 			
 		}catch(Exception e)
 		{
@@ -65,5 +62,23 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 		return -2; // 데이터베이스 오류
+	}
+	public int join(User user) 
+	{
+		String SQL = "INSERT INTO USER VALUES (?, ?, ?, ?, ?)";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1,  user.getUserID());
+			pstmt.setString(2,  user.getUserPW());
+			pstmt.setString(3,  user.getUserName());
+			pstmt.setString(4,  user.getUserEmail());
+			pstmt.setString(5,  user.getUserPhone());
+			return pstmt.executeUpdate();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return -1;
 	}
 }

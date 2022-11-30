@@ -13,13 +13,18 @@
 </head>
 <body>
 	<%
+		request.setCharacterEncoding("UTF-8");
+	
+		String userID = request.getParameter("userID");
 		UserDAO userDAO = new UserDAO();
 		int result = userDAO.login(user.getUserID(), user.getUserPW()); 
 		 /* login 페이지에서 ID, Password 입력된 값으로 넘어와서 login함수에 넣어서 실행
 		 -2(오류), -1(아이디가 없음), 0(로그인 실패), 1(로그인 성공)이 저장*/
 		 
 		 if(result == 1)
-		 {
+		 {	
+			 session.setAttribute("userID", userID);
+		 	 response.sendRedirect("main.jsp");
 			 PrintWriter script = response.getWriter();
 			 script.println("<script>");
 			 script.println("location.href = 'main.jsp'");

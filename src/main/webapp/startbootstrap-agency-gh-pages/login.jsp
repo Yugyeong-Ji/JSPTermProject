@@ -31,15 +31,12 @@
             <h5 class="card-title text-center">Log In</h5>
             <form class="form-signin" method="post" action="loginAction.jsp">
               <div class="form-label-group">
-                <input type="text" id="id" name="userID" class="form-control" placeholder="id" required autofocus>
+                <input type="text" id="userID" name="userID" class="form-control" placeholder="id" required autofocus>
 				</div><br>
 
               <div class="form-label-group">
-                <input type="password" id="pwd" name="userPW" class="form-control" placeholder="Password" required>
+                <input type="password" id="userPW" name="userPW" class="form-control" placeholder="Password" required>
               </div>
-              
-              <hr>
-              
               <div class="form-label-group">
               <c:if test="${check == 1 }">
                 <label>${message }</label>

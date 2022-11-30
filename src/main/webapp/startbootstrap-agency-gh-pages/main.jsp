@@ -16,7 +16,11 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
+    
     <body id="page-top">
+    <%
+    	String userid = (String)session.getAttribute("userID");
+    %>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
@@ -27,6 +31,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    	<li class="nav-item"><a class="nav-link"><%=userid %>님 환영합니다.</a></li>
                         <li class="nav-item"><a class="nav-link" href="#search">빵뎅이 찾기</a></li>
                         <li class="nav-item"><a class="nav-link" href="#profile">빵뎅이 소개</a></li>
                         <li class="nav-item"><a class="nav-link" href="./mypage.jsp">마이페이지</a></li>

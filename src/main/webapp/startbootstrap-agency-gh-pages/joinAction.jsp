@@ -36,7 +36,9 @@
 			
 		UserDAO userDAO = new UserDAO();
 		int result = userDAO.join(user); //6~13라인에서의 각각의 값을 입력받은 user라는 인스턴스가 join 함수를 수행하도록 매개변수가 됨
+		request.setCharacterEncoding("UTF-8");
 		
+		String userID = request.getParameter("userID");
 		 if(result == -1)
 		 {
 			 PrintWriter script = response.getWriter();
@@ -49,6 +51,7 @@
 		 
 		 else 
 		 {
+			 session.setAttribute("userID", userID);
 			 PrintWriter script = response.getWriter();
 			 script.println("<script>");
 			 script.println("location.href = 'main.jsp'"); //회원가입이 된경우 => main.jsp 페이지로 이동

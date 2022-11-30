@@ -29,13 +29,13 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">Log In</h5>
-            <form class="form-signin" method="post" action="login">
+            <form class="form-signin" method="post" action="loginAction.jsp">
               <div class="form-label-group">
-                <input type="text" id="id" name="id" class="form-control" placeholder="id" required autofocus>
+                <input type="text" id="id" name="userID" class="form-control" placeholder="id" required autofocus>
 				</div><br>
 
               <div class="form-label-group">
-                <input type="password" id="pwd" name="pwd" class="form-control" placeholder="Password" required>
+                <input type="password" id="pwd" name="userPW" class="form-control" placeholder="Password" required>
               </div>
               
               <hr>

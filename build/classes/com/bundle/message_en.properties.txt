@@ -1,0 +1,9 @@
+summary = summary
+address = Adress
+price = Price
+description = Description
+shopName = shop Name
+grade = Grade
+category = Category
+shopImage = shop Image
+button = Insert

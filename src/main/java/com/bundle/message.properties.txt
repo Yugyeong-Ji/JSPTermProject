@@ -1,0 +1,9 @@
+summary = 한줄 소개
+address = 주소
+price = 가격
+description = 상세설명
+shopName = 가게명
+grade = 평점
+category = 분류
+shopImage = 가게 사진
+button = 등록

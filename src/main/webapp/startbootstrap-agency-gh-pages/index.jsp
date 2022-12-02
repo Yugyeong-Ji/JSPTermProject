@@ -15,6 +15,24 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        
+        <script type="text/javascript">
+        	var imgArray = new Array();
+        	imgArray[0] = "assets/img/붕어빵1-1.png";
+        	imgArray[1] = "assets/img/붕어빵1-2.png";
+        	imgArray[2] = "assets/img/붕어빵2-1.png";
+        	imgArray[3] = "assets/img/붕어빵2-2.png";
+        	imgArray[4] = "assets/img/붕어빵3-1.png";
+        	imgArray[5] = "assets/img/붕어빵3-2.png";
+        	function showImage() {
+        		var imgNum = Math.floor(Math.round(Math.random()*5));
+            	var objImg = document.getElementById("rankImg");
+            	objImg.src = imgArray[imgNum];
+ 
+            	setTimeout("showImage()", 2000);
+        	}
+
+   	 </script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -27,158 +45,50 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#search">빵뎅이 찾기</a></li>
                         <li class="nav-item"><a class="nav-link" href="#profile">빵뎅이 소개</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./join.jsp">회원가입</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./login.jsp">로그인</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.jsp">빵뎅이 찾기</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.jsp">로그인</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="masthead">
+        <!-- Masthead-->
+        <header class="masthead" style="width:100%; height: 100%;">
             <div class="container">
                 <div class="masthead-subheading">Welcome To 빵뎅이!</div>
                 <div class="masthead-heading text-uppercase" id="title">붕어<span style="color: sandybrown;">빵</span> 오<span style="color: sandybrown;">뎅</span> 떡볶<span style="color: sandybrown;">이</span></div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="./login.jsp">빵뎅이 찾으러가기</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="login.jsp">빵뎅이 찾기</a>
             </div>
         </header>
         <!-- Services-->
-        <section class="page-section" id="search">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">빵뎅이 찾기</h2>
-                    <h3 class="section-subheading text-muted">로그인 후 이용하실 수 있습니다.</h3>
-                </div>
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">E-Commerce</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Responsive Design</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Web Security</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Portfolio Grid-->
-        <section class="page-section bg-light" id="profile">
+        <section class="page-section" id="profile">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">빵뎅이란?</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 1-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Threads</div>
-                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 2-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Explore</div>
-                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 3-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Finish</div>
-                                <div class="portfolio-caption-subheading text-muted">Identity</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <!-- Portfolio item 4-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Lines</div>
-                                <div class="portfolio-caption-subheading text-muted">Branding</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                        <!-- Portfolio item 5-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Southwest</div>
-                                <div class="portfolio-caption-subheading text-muted">Website Design</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <!-- Portfolio item 6-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Window</div>
-                                <div class="portfolio-caption-subheading text-muted">Photography</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row text-center" style="margin-top:50px;">	
+
+       				<body onload="showImage()">
+       				<div style="display: flex;">
+        				<img id="rankImg" border="0" style="width:500px;">
+        				<div style="margin-left: 60px; min-width: 600px;">
+							<h4>빵뎅이는 붕어빵, 오뎅, 떡볶이의 줄임말로, <br />
+							전국의 붕어빵, 오뎅, 떡볶이 맛집을 소개해주는 사이트입니다.<br /><br />
+							겨울철 우리들의 소소한 행복을 책임져줄 빵뎅이!<br /><br />
+							리뷰로 맛집을 추천하고, <br />찜을 통해 가고싶은 맛집을 선택할 수 있습니다.<br /><br />
+							빵뎅이로 따뜻한 하루를 시작하세요:)<br /><br /><br />
+							</h4>
+							<h6>developer:Ji-Yugyeong</h6>
+							<h6>github url: <a href="https://github.com/Yugyeong-Ji">https://github.com/Yugyeong-Ji</a></h6>
+							<h6>문의사항 : yugyeong29@kyonggi.ac.kr</h6>
+							<h6>연락처 : 010-1234-5678</h6>
+						</div>
+					</div>
                 </div>
             </div>
         </section>
+
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">

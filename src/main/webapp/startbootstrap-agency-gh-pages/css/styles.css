@@ -89,6 +89,27 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+ .main-view{
+      margin:  auto;
+      margin-bottom: 20px;
+      margin-top: 50px;
+      width: 30%;
+}
+.main-view{height:500px;overflow:hidden;}
+    .main-view ul{width:calc(100% * 3);display:flex;animation:slide 10s infinite; text-align: center;} /* slide를 8초동안 진행하며 무한반복 함 */
+    .main-view li{width:calc(100% / 3);height:300px;}
+   
+    
+    @keyframes slide {
+      0% {margin-left:0;} /* 0 ~ 10  : 정지 */
+      10% {margin-left:0;} /* 10 ~ 25 : 변이 */
+      25% {margin-left:-100%;} /* 25 ~ 35 : 정지 */
+      35% {margin-left:-100%;} /* 35 ~ 50 : 변이 */
+      50% {margin-left:-200%;}
+      60% {margin-left:-200%;}
+      100% {margin-left:0;}
+    }
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -11414,6 +11435,7 @@ header.masthead {
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
+  
   background-size: cover;
 }
 header.masthead .masthead-subheading {

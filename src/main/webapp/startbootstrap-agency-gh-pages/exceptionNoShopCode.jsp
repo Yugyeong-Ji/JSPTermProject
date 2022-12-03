@@ -1,13 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ page import="java.util.ArrayList"%>
-<%@ page import="dto.Shop"%>
-<%@page import="dao.shopRepository"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
-		<jsp:useBean id="shopDAO" class="dao.shopRepository" scope="session"/>
-        <meta charset="utf-8" />
+        <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
@@ -21,15 +16,17 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        </head>
-            <body id="page-top">
-    <%
+        
+    
+</head>
+    <body id="page-top">
+        <%
     	String userid = (String)session.getAttribute("userID");
     %>
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-dark fixed-top" id="mainNav" style="height: 120px;">
+        <nav class="navbar navbar-expand-lg bg-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="main.jsp"><img src="assets/img/navbar-logo.png" alt="..." style="width:130px; height:100px;"/></a>
+                <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.png" alt="..." style="width:130px; height:100px;"/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -45,37 +42,18 @@
                 </div>
             </div>
         </nav>
-                <!-- Portfolio Grid-->
-        <section class="page-section bg-light" id="search">
-            <div class="container" style="margin-top: 100px;">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase" style="padding-bottom: 50px;">빵뎅이 맛집</h2>
-                </div>
- 				<%
-					ArrayList<Shop> listOfShops = shopDAO.getAllShops();
-				%>
-	
-	<div class=container>
-		<div class="row">
-		<%
-		for(int i = 0; i < listOfShops.size(); i++){
-			Shop shop = listOfShops.get(i);
-		%>
-		<div class="col-md-4">
-		<div class="col-md-3">
-                <a href="./shop.jsp?code=<%=shop.getCode()%>"><img src="./assets/img/shop/<%=shop.getFilename()%>" style="width:300px; height:300px; padding-bottom:20px;"/></a>
-             	</div>
-			<h3><a href="./shop.jsp?code=<%=shop.getCode()%>" style="text-decoration-line: none; color: black;">[<%= shop.getCategory() %>] <%= shop.getShopName() %></a></h3>
-			<p><%=shop.getPrice() %>원  (<%= shop.getGrade() %>)
+	<%!
+		String main = "해당 가게가 존재하지 않습니다.";
+	%>
+		<div class="container">
+			<h2 class = "alert alert-danger"><%=main %></h2>
 		</div>
-			<%
-				}
-			%>
+	<div class="contaimer">
+		<div class="text-center">
+			<p><%=request.getRequestURL() %>?<%=request.getQueryString() %>
+			<p> <a href="shops.jsp" class="btn btn-secondary"> 가게 목록</a>
 		</div>
-		<hr>
-        </div>
-        </section>
-                <!-- Footer-->
+	</div>
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">

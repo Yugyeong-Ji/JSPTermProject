@@ -52,7 +52,7 @@
                     	<li class="nav-item"><a class="nav-link"><%=userid %>님 환영합니다.</a></li>
                         <li class="nav-item"><a class="nav-link" href="#profile">빵뎅이 소개</a></li>
                         <li class="nav-item"><a class="nav-link" href="shops.jsp">빵뎅이 찾기</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./mypage.jsp">마이페이지</a></li>
+                        <li class="nav-item"><a class="nav-link" href="wish.jsp">위시리스트</a></li>
                         <li class="nav-item"><a class="nav-link" href="./logout.jsp">로그아웃</a></li>
                     </ul>
                 </div>
@@ -170,23 +170,18 @@
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">fish bread</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <p class="item-intro text-muted">붕어빵은 대한민국의 길거리 음식 중 하나로, 일본의 타이야키를 원조로 한 음식이다.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/붕어빵.png" alt="..." " style="width:808px;"/>
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Threads
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Illustration
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <p>이름에서 알 수 있듯 일본의 타이야키가 도미 모양인 것과 달리, 한국에서는 붕어 모양으로 현지화되었다. 타이야키와 달리 한국인 입맛에 걸맞게 바삭하고 고소한 반죽으로 바뀌었으며 단맛을 약간 줄였다. 크기도 타이야끼보다 작고, 퀄리티도 약간 낮춰서 타이야키에 비해 가격도 저렴해 쉽게 사먹을 수 있어서 우리나라에서 인기가 매우 많은 편이다. <br /><br />붕어빵의 인기가 많아지면서 점차 팥만으로만 만든 것이 아닌 슈크림, 고구마, 초콜릿, 치즈, 카레, 피자 시즈닝, 김치 등 여러가지 재료를 골라서 넣기 시작했고, 황금잉어빵, 흑쌀 잉어빵, 고구마 붕어빵, 피자 붕어빵 등 메뉴가 다양해지고 있다. 겨울이 되면, 붕어빵을 많이 찾기 때문에 최근에는 붕세권이라는 단어도 생겨났다.<br /><br /> 머리와 꼬리 중 먼저 먹는 부위에 따른 심리테스트도 관심을 많이 받고있으며<br/> 팥붕vs슈붕의 논란도 있다. </p>
+                                    <div>
+                                    <a class="btn btn-primary btn-l text-uppercase" type="button" href="shops.jsp">
+                                    Famous restaurant
+                                    </a>
+                                    <button class="btn btn-secondary btn-l text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                        Close
                                     </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -205,23 +200,18 @@
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">fish cake</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <p class="item-intro text-muted">오뎅은 으깬 생선살과 밀가루를 뭉쳐서 열을 가해 묵처럼 굳혀 만든 어육 가공 음식이다.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/오뎅.png" alt="..." style="width:808px;"/>
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Explore
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Graphic Design
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <p>많은 사람들이 오뎅과 어묵을 동의어처럼 사용하는 경우가 많은데, 이것은 잘못된 표현이다. 일본어의 오뎅은 어묵과는 상관없이 술 안주용 꼬치 재료들을 넣고 끓이는 탕 요리를 지칭하고, 이에는 어묵이 들어가는 경우가 대부분이지만 안들어가는 경우도 있다. <br /><br />길거리 포장마차에서 흔히 보이는 음식으로, 겨울철 추위에 떠는 사람들에게 길거리 음식의 온기와 정을 느낄 수 있도록 해주는 따뜻한 음식이다.</p>
+                                    <div>
+                                    	<a class="btn btn-primary btn-l text-uppercase" type="button" href="shops.jsp">
+                                        Famous restaurant
+                                    </a>
+                                    <button class="btn btn-secondary btn-l text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                        Close
                                     </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -244,9 +234,9 @@
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/떡볶이.png" alt="..."  style="width:808px;"/>
                                     <p>일반적인 떡볶이는 밀떡, 쌀떡, 어묵, 채소, 고추장 등의 양념을 넣어 볶은 음식으로 한국의 대표적 길거리 음식이다. 고추장과 간장을 기본으로 양념할 수 있는데 전자가 가장 대표적인 형태이다.<br /><br />현대 한국에서 즐겨먹는 고추장 떡볶이는 한국 전쟁 직후에 개발된 음식이다. 이전에 궁중에서 먹던 떡볶이는 간장 양념에 재어둔 쇠고기를 떡과 같이 볶아서 만들었다고 한다.</p>
                                     <div>
-                                    <button class="btn btn-primary btn-l text-uppercase" type="button" href="shops.jsp">
+                                    <a class="btn btn-primary btn-l text-uppercase" type="button" href="shops.jsp">
                                         Famous restaurant
-                                    </button>
+                                    </a>
                                     <button class="btn btn-secondary btn-l text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
                                         Close

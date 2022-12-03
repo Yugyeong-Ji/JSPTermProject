@@ -1,9 +1,9 @@
 summary = summary
-address = Adress
-price = Price
+address = Address
+unitPrice = Price
 description = Description
 shopName = shop Name
-grade = Grade
+grade1 = Grade
 category = Category
 shopImage = shop Image
 button = Insert

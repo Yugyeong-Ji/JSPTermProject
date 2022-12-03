@@ -1,9 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page import="dao.shopRepository"%>
 <%@ page import="dto.Shop" %>
 <jsp:useBean id="shopDAO" class="dao.shopRepository" scope="session"/>
-<% request.setCharacterEncoding("UTF-8"); %>
+
+<%
+	// 세션의 고유 아이디를 가져온다.
+	String wishId = session.getId();
+%>
 <html>
 <head>
         <meta charset="utf-8" />
@@ -20,26 +25,11 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-    
         </head>
-        <script type="text/javascript">
-			function addToWish(){
-				// 확인 true 취소 false
-				if(confirm("위시리스트에 추가하시겠습니까?")){ // 확인
-					document.addForm.submit();
-				}else{ // 취소
-					document.addForm.reset();
-				}
-			}
-		</script>
+        <%
+		String userid = (String)session.getAttribute("userID");
+        %>
             <body id="page-top">
-    		<%
-    			String userid = (String)session.getAttribute("userID");
-    		
-    			String code = request.getParameter("code");
-    			shopRepository dao = shopRepository.getInstance();
-    			Shop shop = dao.getShopByCode(code);
-    		%>
         	<!-- Navigation-->
         	<nav class="navbar navbar-expand-lg bg-dark fixed-top" id="mainNav" style="height: 120px;">
             	<div class="container">
@@ -52,49 +42,78 @@
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     	<li class="nav-item"><a class="nav-link"><%=userid %>님 환영합니다.</a></li>
                         <li class="nav-item"><a class="nav-link" href="main.jsp#profile">빵뎅이 소개</a></li>
-                        <li class="nav-item"><a class="nav-link" href="shops.jsp">빵뎅이 찾기</a></li>
-                        <li class="nav-item"><a class="nav-link" href="wish.jsp">위시리스트</a></li>
+                        <li class="nav-item"><a class="nav-link" href="bbangdengi.jsp">빵뎅이 찾기</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./wish.jsp">마이페이지</a></li>
                         <li class="nav-item"><a class="nav-link" href="./logout.jsp">로그아웃</a></li>
                     </ul>
                 </div>
             	</div>
         	</nav>
-                <!-- Portfolio Grid-->
-        <section class="page-section bg-light" id="search">
+		<section class="page-section bg-light" id="search">
             <div class="container" style="margin-top: 100px;">
                 <div class="text-center">
                     	<h2 class="section-heading text-uppercase" style="padding-bottom: 50px;">빵뎅이 맛집</h2>
                 	</div>
-					<div class="container">
-					<div class="row">
-					<img src="./assets/img/shop/<%=shop.getFilename()%>" style="width:400px; height:400px;"/>
-					<div class="col-md-6">
-						<h3>[<%= shop.getCategory() %>] <%= shop.getShopName() %></h3>
-						<p>코드 : <span class="badge badge-danger"><%=shop.getCode() %></span>
-						<p><%=shop.getSummary() %>
-						<p><%=shop.getDescription() %>
-						<p><b>주소</b> : <%=shop.getAddress() %>
-						<p style="color:red;"><b>평점</b> : <%=shop.getGrade() %>
-						<h5><%=shop.getPrice() %>원</h5>
-						<p>
-							<form name ="addForm" method="post" action="addWish.jsp?code=<%=shop.getCode() %>">
-								<a href="#" class="btn btn-info" onclick="addToWish()">
-								담기</a>
-								<a href="wish.jsp" class="btn btn-warning">
-        						위시리스트</a>
-								<a href="./shops.jsp" class="btn btn-secondary">
-								상품목록</a>
-					 		</form>
-					 	</div>
-					 </div>
-					</div>
-        		</div>   
-		</section>
-		        <footer class="footer py-4">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2022</div>
-                    <div class="col-lg-4 my-3 my-lg-0">
+		<div class="container">
+			<div class="row">
+				<table style="width:100%;">
+					<tr>
+						<td align="left">
+						<a href="deleteWish.jsp?wishId=<%=wishId%>" class="btn btn-danger">
+						삭제하기
+						</a>
+						</td>
+					</tr>
+				</table> 
+			</div>
+			<div style="padding-top:50px;">
+				<table class="table table-hover">
+					<tr>
+						<th>가게</th>
+						<th>위치</th>
+						<th>한줄소개</th>
+						<th>평점</th>
+						<th>비고</th>
+					</tr>
+					<%
+    		
+    				int sum = 0;
+					ArrayList<Shop> wishList = (ArrayList<Shop>) session.getAttribute("wishlist");
+					if (wishList == null){
+						wishList = new ArrayList<Shop>();
+					}
+					for(int i=0; i<wishList.size(); i++){
+						Shop shop = wishList.get(i);
+						sum++;
+					%>
+					<tr>
+						<td><%=shop.getShopName() %></td>
+						<td><%=shop.getAddress() %></td>
+						<td><%=shop.getSummary() %></td>
+						<td><%=shop.getGrade()%></td>
+						<td>삭제</td>
+					</tr>
+					<%
+						}
+					%>			
+						<tr>
+							<th></th>
+							<th></th>
+							<th>개수</th>
+							<th><%=sum %></th>
+							<th></th>
+						</tr>	
+					</table>
+					<a href="./shops.jsp" class="btn btn-secondary"> 맛집 계속보기</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+               <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2022</div>
+                   <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -106,5 +125,5 @@
                 </div>
             </div>
         </footer>
-     </body>
+</body>
 </html>

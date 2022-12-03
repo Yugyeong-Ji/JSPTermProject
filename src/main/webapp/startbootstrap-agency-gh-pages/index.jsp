@@ -48,6 +48,7 @@
                         <li class="nav-item"><a class="nav-link" href="#profile">빵뎅이 소개</a></li>
                         <li class="nav-item"><a class="nav-link" href="login.jsp">빵뎅이 찾기</a></li>
                         <li class="nav-item"><a class="nav-link" href="login.jsp">로그인</a></li>
+                        <li class="nav-item"><a class="nav-link" href="join.jsp">회원가입</a></li>
                     </ul>
                 </div>
             </div>

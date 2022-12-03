@@ -24,7 +24,13 @@
 		 if(result == 1)
 		 {	
 			 session.setAttribute("userID", userID);
-		 	 response.sendRedirect("main.jsp");
+			 
+			 if(userID.equals("admin")){
+				 response.sendRedirect("adminMain.jsp");
+			 }
+			 else {
+				 response.sendRedirect("main.jsp");
+			 }
 			 PrintWriter script = response.getWriter();
 			 script.println("<script>");
 			 script.println("location.href = 'main.jsp'");
